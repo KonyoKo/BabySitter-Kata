@@ -20,17 +20,63 @@ public class PayrateCalculator {
     }
 
     private static Integer calculateStartToBed() {
-
-        return 0;
+        if(endTime < bedTime) {
+            if(startTime < endTime) {
+                return endTime - startTime;
+            }
+            else {
+                return 0;
+            }
+        }
+        else {
+            if(startTime < bedTime) {
+                return bedTime - startTime;
+            }
+            else {
+                return 0;
+            }
+        }
     }
 
     private static Integer calculateBedToMidnight() {
-
-        return 0;
+        if(endTime <= bedTime) {
+            return 0;
+        }
+        else if(endTime <= midnight) {
+            if (startTime < bedTime){
+                return endTime - bedTime;
+            }
+            else if(startTime < midnight){
+                return endTime - startTime;
+            }
+            else {
+                return 0;
+            }
+        }
+        else {
+            if(startTime < bedTime) {
+                return midnight - bedTime;
+            }
+            else if(startTime < midnight) {
+                return midnight - startTime;
+            }
+            else {
+                return 0;
+            }
+        }
     }
 
     private static Integer calculateMidnightToEnd() {
-
-        return 0;
+        if(endTime > midnight) {
+            if(startTime < midnight) {
+                return endTime - midnight;
+            }
+            else {
+                return endTime - startTime;
+            }
+        }
+        else {
+            return 0;
+        }
     }
 }
