@@ -12,10 +12,10 @@ public class PayrateCalculator {
     private static final double MIDNIGHT_TO_END_RATE = 16;
 
     public static double calculate (String startTime, String bedTime, String endTime) {
-        PayrateCalculator.startTime = HourCalculator.convertHoursToInteger(startTime);
-        PayrateCalculator.bedTime = HourCalculator.convertHoursToInteger(bedTime);
-        PayrateCalculator.midnight = HourCalculator.convertHoursToInteger(MIDNIGHT);
-        PayrateCalculator.endTime = HourCalculator.convertHoursToInteger(endTime);
+        PayrateCalculator.startTime = HourCalculator.convertHoursToInt(startTime);
+        PayrateCalculator.bedTime = HourCalculator.convertHoursToInt(bedTime);
+        PayrateCalculator.midnight = HourCalculator.convertHoursToInt(MIDNIGHT);
+        PayrateCalculator.endTime = HourCalculator.convertHoursToInt(endTime);
         return calculateStartToBed() * START_TO_BED_RATE + calculateBedToMidnight() * BED_TO_MIDNIGHT_RATE + calculateMidnightToEnd() * MIDNIGHT_TO_END_RATE;
     }
 
