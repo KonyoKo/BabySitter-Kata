@@ -1,3 +1,4 @@
 # BabySitter-Kata
 Personal solution to this exercise.
 
+  Here I took a very simplistic approach to the problem, straying from many complex solutions to demenstated that it is a very possible problem to solve with a base-line understanding of language. The process of making this was very TDD focused as i would often start writing methods by thinking and understand in what scenarios could it be tested. Which lead to a very small number of actual classes, ignoring the actuall JUnit classes there was only 3 classes dedicated to holding logic and values with a sudden additon of a 4th runnable class. The fourth classes entire function is to make the program easier to use as when that class is run will provide a terminal read-out of the process asking for the 3 time slots: Start, Bed, & End times and feeds those values into the rest of the logic and returning with a clean numerical value of what the sitter would have earned by the end of the shift.
